@@ -128,69 +128,6 @@ else
         $resultin = mysqli_query($dbc, $queryint);
 
         
-        /*
-        $mailer = new PHPMailer();
-        $mailer->IsSMTP();
-        $mailer->Host = 'ssl://smtp.gmail.com:465';
-        $mailer->SMTPAuth = TRUE;
-        $mailer->Username = 'tallnasran@gmail.com';  // Change this to your gmail adress
-        $mailer->Password = '';  // Change this to your gmail password
-        $mailer->From = 'ohnana@noreply.com';  // This HAVE TO be your gmail adress
-        $mailer->FromName = 'Registration Success!'; // This is the from name in the email, you can put anything you like here
-        $mailer->Body = "
-        <html>
-        <head>
-        <title>Ohnana Order Confirmation</title>
-        </head>
-        <body>
-        <table>
-        <tr>
-        <th>Order Number</th>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Address</th>
-        <th>Phone</th>
-        </tr>
-        <tr>
-        <td>$unique</td>
-        <td>".$row['name']."</td>
-        <td>".$_SESSION['cart'][$row['id']]."</td>
-        <td>$subtotal</td>
-        <td>$address</td>
-        <td>$phone</td>
-        </tr>
-        </table>
-        </body>
-        </html>
-        ";
-        $mailer->Subject = 'New User Registered!';
-        $mailer->AddAddress($email); 
-        $mailer->Send();
-        $to = $email;
-        $subject = "Ohnana Order Confirmation";
-        
-        $message = ;
-        
-        // Always set content-type when sending HTML email
-        $headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
-        
-        // More headers
-        $headers .= 'From: <ohnana@example.com>' . "\r\n";
-        $headers .= 'Cc: nani@example.com' . "\r\n";
-        
-        $sentmail = mail($to,$subject,$message,$headers);
-        
-        if ($sentmail) {
-         echo"
-            Message successfully sent to
-         ".$to;
-      } else {
-         echo("
-            Message delivery failed...
-         ");
-      }
-      */
   }
   // Load Composer's autoloader
   require 'vendor/autoload.php';
@@ -204,8 +141,8 @@ else
       $mail->isSMTP();                                            // Set mailer to use SMTP
       $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
       $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-      $mail->Username   = 'tallnasran@gmail.com';                     // SMTP username
-      $mail->Password   = '';                               // SMTP password
+      $mail->Username   = '';                     // SMTP username insert your email
+      $mail->Password   = '';                               // SMTP password insert your password email
       $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
       $mail->Port       = 587;                                    // TCP port to connect to
       $mail->SMTPOptions = array(
